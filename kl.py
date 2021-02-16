@@ -5,6 +5,8 @@ import requests
 from plotly.offline import iplot
 import plotly.graph_objs as go
 import plotly.express as px
+
+from datas import kl_data
 # from pandas.io.json import json_normalize
 
 
@@ -27,6 +29,8 @@ df1 = df.drop('delta', axis=1)
 df1 = df1.drop(['hospital_obs','home_obs','total_obs','hospital_today'], axis=0)
 st.bar_chart(df1)
 
+
+st.write(pd.DataFrame(kl_data()))
 # r2= requests.get('https://keralastats.coronasafe.live/histories.json')
 # df2 = pd.read_json(r2.text)
 # history = df['histories']
